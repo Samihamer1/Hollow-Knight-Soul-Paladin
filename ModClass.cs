@@ -50,13 +50,14 @@ namespace Soul_Paladin
 
         private void CheckScene(UnityEngine.SceneManagement.Scene arg0, UnityEngine.SceneManagement.Scene arg1)
         {
-            if (arg1.name == "GG_Mage_Knight")
+            Modding.Logger.Log(arg1.name);
+            if (arg1.name == "GG_Mage_Knight" || arg1.name == "GG_Mage_Knight_V")
             {
-                GameManager.instance.StartCoroutine(CheckChampion());
+                GameManager.instance.StartCoroutine(CheckKnight());
             }
         }
 
-        private IEnumerator CheckChampion()
+        private IEnumerator CheckKnight()
         {
             yield return new WaitWhile(() => GameObject.Find("Mage Knight") == null);
             GameObject.Find("Mage Knight").AddComponent<PaladinControl>();

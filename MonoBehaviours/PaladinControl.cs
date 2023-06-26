@@ -34,6 +34,12 @@ namespace Soul_Paladin
             FsmState wakestate = controlfsm.GetState("Wake");
             wakestate.GetAction<SetDamageHeroAmount>().damageDealt = 2;
 
+            //doubling slash damage
+            foreach (DamageHero damageHero in gameObject.GetComponentsInChildren<DamageHero>())
+            {
+                damageHero.damageDealt = 2;
+            }
+
             //Stomp speed.
             FsmState stompstate = controlfsm.GetState("Stomp Air");
             stompstate.GetAction<SetVelocity2d>().y = -85f;
@@ -74,9 +80,6 @@ namespace Soul_Paladin
             //add to the shooty attack
             FsmState shoot = controlfsm.GetState("Shoot");
             addZaps(shoot);
-
-            //doubling orb damage (hope it doesnt affect other orbs)
-            controlFsm.GetAction<SpawnObjectFromGlobalPool>("Shoot", 3).storeObject.Value.GetComponent<DamageHero>().damageDealt = 2;
 
             //Variable edits.
             controlfsm.FsmVariables.FindFsmFloat("Dash Speed").Value = 65f;
