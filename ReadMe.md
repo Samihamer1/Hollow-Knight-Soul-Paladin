@@ -1,3 +1,4 @@
 # Soul_Paladin
 
-A mod for the game Hollow Knight.
+The Soul Warrior has been training.
+Attacks have been modified, sped up, and one new attack was added.
