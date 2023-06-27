@@ -13,7 +13,7 @@ namespace Soul_Paladin
         internal static Soul_Paladin Instance;
 
         new string GetName() => "Soul Paladin";
-        public override string GetVersion() => "v0.0.0.1";
+        public override string GetVersion() => "v0.0.0.3";
         public override List<(string, string)> GetPreloadNames()
         {
             return new List<(string, string)>

@@ -12,7 +12,7 @@ namespace Soul_Paladin
         public static FsmObject laserpreparesound;
         public static FsmObject laserburstsound;
         public static GameObject multizap;
-        //Battle Scene/False Knight New/Staff/Staff Head
+
         public static void LoadResource(Dictionary<string, Dictionary<string, GameObject>> preloadedObjects)
         {
             laserpreparesound = preloadedObjects["GG_Radiance"]["Boss Control/Absolute Radiance"].LocateMyFSM("Attack Commands").GetAction<AudioPlaySimple>("EB 1", 1).oneShotClip;

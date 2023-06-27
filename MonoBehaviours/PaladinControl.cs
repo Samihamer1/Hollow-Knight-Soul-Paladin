@@ -143,12 +143,12 @@ namespace Soul_Paladin
         {
             state.AddMethod(() =>
             {
-                for (int i = 1; i < 16; i++)
+                for (int i = 1; i < 25; i++)
                 {
                     GameObject laser = Instantiate(ResourceLoader.radiancelaser);
                     Vector2 warriorpos = transform.position;
                     float xvalue = (float)(i * 2.5);
-                    laser.transform.SetPosition2D(25+xvalue, 0);
+                    laser.transform.SetPosition2D((warriorpos.x - 25)+xvalue, 0);
                     laser.SetActive(true);
                     PlayMakerFSM fsm = laser.GetComponent<PlayMakerFSM>();
                     StartCoroutine(activateLaser(fsm,laser));
